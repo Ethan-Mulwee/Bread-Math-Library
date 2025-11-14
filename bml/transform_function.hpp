@@ -19,38 +19,38 @@ namespace bml {
     //     return inverseTransform;
     // }
 
-    inline Vector3 transform_inverse_transform_vector3(const Transform &t, const Vector3 &v) {
-        Vector3 transformedVector = v;
-        transformedVector = transformedVector - t.translation;
-        transformedVector = quaternion_transform_vector(inverse(t.rotation), transformedVector);
-        transformedVector = transformedVector / t.scale;
+    inline Vector3 inverse_transform_vector(const Transform &t, const Vector3 &v) {
+        Vector3 transformed_vector = v;
+        transformed_vector = transformed_vector - t.translation;
+        transformed_vector = quaternion_transform_vector3(inverse(t.rotation), transformed_vector);
+        transformed_vector = transformed_vector / t.scale;
 
-        return transformedVector;
+        return transformed_vector;
     }
 
-    inline Vector3 transform_transform_vector3(const Transform &t, const Vector3 &v) {
-        Vector3 transformedVector = v;
-        transformedVector = transformedVector * t.scale;
-        transformedVector = quaternion_transform_vector(t.rotation, transformedVector);
-        transformedVector = transformedVector + t.translation;
+    inline Vector3 transform_vector(const Transform &t, const Vector3 &v) {
+        Vector3 transformed_vector = v;
+        transformed_vector = transformed_vector * t.scale;
+        transformed_vector = quaternion_transform_vector3(t.rotation, transformed_vector);
+        transformed_vector = transformed_vector + t.translation;
 
-        return transformedVector;
+        return transformed_vector;
     }
 
     inline Matrix4x4 matrix4x4_from_transform(const Transform &t) {
-        Matrix3x3 rotationMatrix = matrix3x3_from_quaternion(t.rotation);
-        Matrix3x3 scaleMatrix = {
+        Matrix3x3 rotation_matrix = matrix3x3_from_quaternion(t.rotation);
+        Matrix3x3 scale_matrix = {
             t.scale.x, 0.0f, 0.0f,
             0.0f, t.scale.y, 0.0f,
             0.0f, 0.0f, t.scale.z
         };
 
-        Matrix4x4 transformMatrix = matrix4x4_from_matrix3x3(rotationMatrix*scaleMatrix);
-        transformMatrix[3][0] = t.translation.x;
-        transformMatrix[3][1] = t.translation.y;
-        transformMatrix[3][2] = t.translation.z;
+        Matrix4x4 transform_matrix = matrix4x4_from_matrix3x3(rotation_matrix*scale_matrix);
+        transform_matrix[3][0] = t.translation.x;
+        transform_matrix[3][1] = t.translation.y;
+        transform_matrix[3][2] = t.translation.z;
 
-        return transformMatrix;
+        return transform_matrix;
     }
 
     // Decompose matrix4x4 note this is very expensive and doesn't always work

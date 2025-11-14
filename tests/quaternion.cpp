@@ -24,7 +24,7 @@ int main() {
         std::cout << "Quaternion: " << q << "\n";
         std::cout << "Vector: " << v << "\n \n";
 
-        std::cout << "Vector transformed by quaternion: " << quaternion_transform_vector(q, v) << "\n";
+        std::cout << "Vector transformed by quaternion: " << quaternion_transform_vector3(q, v) << "\n";
     }
 
     std::cout << "\n ---------------------------Quaterion from Euler--------------------------- \n \n";

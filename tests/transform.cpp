@@ -18,30 +18,30 @@ int main() {
 
     Vector3 v = {0.0f,1.0f,0.0f};
 
-    Vector3 transformedVector = transform_transform_vector3(t,v);
+    Vector3 transformed_vector = transform_vector(t,v);
 
     std::cout << "Transform: " << t << "\n";
     std::cout << "Vector: " << v << "\n";
 
-    std::cout << "Transformed Vector: " << transformedVector << "\n\n";
+    std::cout << "Transformed Vector: " << transformed_vector << "\n\n";
 
-    Matrix4x4 transformationMatrix = matrix4x4_from_transform(t);
+    Matrix4x4 transformation_matrix = matrix4x4_from_transform(t);
     
-    std::cout << "Transform to Matrix: " << transformationMatrix << "\n";
-    std::cout << "Othrogonal Test: " << matrix3x3_is_orthogonal(matrix3x3_from_matrix4x4(transformationMatrix)) << "\n\n";
-    std::cout << "Transformed Vector from Matrix: " << matrix4x4_transform_vector3(transformationMatrix, v) << "\n\n";
+    std::cout << "Transform to Matrix: " << transformation_matrix << "\n";
+    std::cout << "Othrogonal Test: " << matrix3x3_is_orthogonal(matrix3x3_from_matrix4x4(transformation_matrix)) << "\n\n";
+    std::cout << "Transformed Vector from Matrix: " << matrix4x4_transform_vector3(transformation_matrix, v) << "\n\n";
 
 
     // std::cout << "Matrix to Transform: " << transform_from_matrix4x4(transformationMatrix) << "\n";
 
-    Matrix4x4 inverseTransformationMatrix = inverse(transformationMatrix);
+    Matrix4x4 inverse_transformation_matrix = inverse(transformation_matrix);
 
     
-    std::cout << "Inverse Matrix: " << inverseTransformationMatrix << "\n";
+    std::cout << "Inverse Matrix: " << inverse_transformation_matrix << "\n";
 
-    std::cout << "Inverse Test: " << matrix4x4_is_inverse(inverseTransformationMatrix, transformationMatrix) << "\n";
+    std::cout << "Inverse Test: " << matrix4x4_is_inverse(inverse_transformation_matrix, transformation_matrix) << "\n";
 
-    std::cout << "Othrogonal Test: " << matrix3x3_is_orthogonal(matrix3x3_from_matrix4x4(inverseTransformationMatrix)) << "\n\n";
+    std::cout << "Othrogonal Test: " << matrix3x3_is_orthogonal(matrix3x3_from_matrix4x4(inverse_transformation_matrix)) << "\n\n";
     
     // std::cout << "Inverse Matrix to Transform:" << transform_from_matrix4x4(inverseTransformationMatrix) << "\n";
 

@@ -4,9 +4,11 @@
 # Design 
 Complexity is generally limited. And new features are written as I need them so some things are not yet implemented
 - All types are aggregate types mean to be intialized with intalizer lists.
-- Overloads are not used for functions with more than one parameter. 
+- Overloads are generally not used for functions with more than one parameter. 
 - There is no usage of templates so far. 
 - It is column major for easy use with Graphics APIs. 
+- Methods are generally not used aside for a few basic operations that have no parameters
+- Functions are snake case and names are somewhat verbose for the sake of code readability
 
 Example code
 ```cpp
@@ -24,8 +26,8 @@ Matrix4x4 m = {
     .l = {0,0,0,1},
 };
 
-Matrix4x4 transpose = Transpose(m);
-Matrix4x4 inverse = Inverse(m);
+Matrix4x4 transpose = transpose(m);
+Matrix4x4 inverse = inverse(m);
 
 Vector4 i_hat = m.i;
 Vector3 matrix_translation = m.l.xyz;
@@ -52,7 +54,7 @@ types are float types unless otherwise denoted with a suffix such as i for integ
 # Printing & Debugging
 Rich terminal printing functions are included in "bml_iostream.hpp" for easy debugging.
 ```cpp
-#include "bml_common.hpp"
+#include "bml.hpp"
 #include "bml_iostream.hpp"
 
 bml::Vector3 v = {1,2,3};
