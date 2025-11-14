@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-#include "smath_types.hpp"
+#include "bml_types.hpp"
 #include "matrix_function.hpp"
 #include "vector_function.hpp"
 

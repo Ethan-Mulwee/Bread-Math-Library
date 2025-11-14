@@ -1,5 +1,5 @@
-#include "smath.hpp"
-#include "smath_iostream.hpp"
+#include "bml.hpp"
+#include "bml_iostream.hpp"
 
 int main() {
     using namespace bml;

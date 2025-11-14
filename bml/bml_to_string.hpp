@@ -2,7 +2,7 @@
 #define BML_STRING
 
 #include <string>
-#include "smath_types.hpp"
+#include "bml_types.hpp"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"

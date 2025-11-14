@@ -2,7 +2,7 @@
 #define BML_MATRIX_FUNCTION
 
 #include <cmath>
-#include "smath_types.hpp"
+#include "bml_types.hpp"
 #include "vector_function.hpp"
 
 namespace bml {

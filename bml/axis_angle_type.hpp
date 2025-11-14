@@ -4,7 +4,7 @@
 #include "vector_type.hpp"
 
 namespace bml {
-    struct axis_angle {
+    struct AxisAngle {
         float angle;
         Vector3 axis;
     };

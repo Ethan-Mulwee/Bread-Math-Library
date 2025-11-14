@@ -1,6 +1,5 @@
-#include "smath.hpp"
-#include "to_string.hpp"
-#include "smath_iostream.hpp"
+#include "bml.hpp"
+#include "bml_iostream.hpp"
 #include <iostream>
 
 int main() {

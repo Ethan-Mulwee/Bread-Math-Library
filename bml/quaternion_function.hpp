@@ -5,7 +5,7 @@
 
 #include "quaternion_type.hpp"
 #include "vector_function.hpp"
-#include "smath_types.hpp"
+#include "bml_types.hpp"
 
 namespace bml {
     // Multiply quaternions

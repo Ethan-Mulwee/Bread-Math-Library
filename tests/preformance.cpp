@@ -2,8 +2,8 @@
 #include <chrono>
 #include <random>
 
-#include "smath.hpp"
-#include "to_string.hpp"
+#include "bml.hpp"
+#include "bml_to_string.hpp"
 
 int main() {
     using namespace bml;
