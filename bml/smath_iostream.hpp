@@ -17,7 +17,7 @@
 
 namespace bml {
 
-    inline std::ostream &operator <<(std::ostream &os, const vector2 &v) {
+    inline std::ostream &operator <<(std::ostream &os, const Vector2 &v) {
         os << "(" 
         ANSI_COLOR_RED + std::to_string(v.x) + ANSI_COLOR_RESET ", " 
         ANSI_COLOR_GREEN + std::to_string(v.y) + ANSI_COLOR_RESET
@@ -25,7 +25,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const vector3 &v) {
+    inline std::ostream &operator <<(std::ostream &os, const Vector3 &v) {
         const char* xSpace = std::signbit(v.x) ? "" : " ";
         const char* ySpace = std::signbit(v.y) ? "" : " ";
         const char* zSpace = std::signbit(v.z) ? "" : " ";
@@ -37,7 +37,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const vector4 &v) {
+    inline std::ostream &operator <<(std::ostream &os, const Vector4 &v) {
         os << "(" 
         ANSI_COLOR_RED + std::to_string(v.x) + ANSI_COLOR_RESET ", " 
         ANSI_COLOR_GREEN + std::to_string(v.y) + ANSI_COLOR_RESET ", " 
@@ -47,7 +47,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const quaternion &q) {
+    inline std::ostream &operator <<(std::ostream &os, const Quaternion &q) {
         os << "(" 
         ANSI_COLOR_RED + std::to_string(q.x) + ANSI_COLOR_RESET ", " 
         ANSI_COLOR_GREEN + std::to_string(q.y) + ANSI_COLOR_RESET ", " 
@@ -57,7 +57,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const transform &t) {
+    inline std::ostream &operator <<(std::ostream &os, const Transform &t) {
         os <<
         "\n| translation: " << t.translation << "\n"
         "| rotation: " << t.rotation << "\n"
@@ -65,7 +65,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const matrix2x2 &m) {
+    inline std::ostream &operator <<(std::ostream &os, const Matrix2x2 &m) {
         unsigned longest = 0;
 
         std::string strings[2][2];
@@ -95,7 +95,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const matrix3x3 &m) {
+    inline std::ostream &operator <<(std::ostream &os, const Matrix3x3 &m) {
         unsigned longest = 0;
 
         std::string strings[3][3];
@@ -126,7 +126,7 @@ namespace bml {
         return os;
     }
 
-    inline std::ostream &operator <<(std::ostream &os, const matrix4x4 &m) {
+    inline std::ostream &operator <<(std::ostream &os, const Matrix4x4 &m) {
         unsigned longest = 0;
 
         std::string strings[4][4];

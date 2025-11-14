@@ -6,61 +6,61 @@
 
 namespace bml {
 
-    struct matrix2x2 {
+    struct Matrix2x2 {
         union {
-            vector2 data[2];
+            Vector2 data[2];
             struct {
-                vector2 i, j;
+                Vector2 i, j;
             };
             struct {
-                vector2 x, y;
+                Vector2 x, y;
             };
         };
 
-        inline vector2& operator[](const size_t i) {
+        inline Vector2& operator[](const size_t i) {
             return data[i];
         }
 
-        inline const vector2& operator[](const size_t i) const {
+        inline const Vector2& operator[](const size_t i) const {
             return data[i];
         }
     };
-    struct matrix3x3 {
+    struct Matrix3x3 {
         union {
-            vector3 data[3];
+            Vector3 data[3];
             struct {
-                vector3 i, j, k;
+                Vector3 i, j, k;
             };
             struct {
-                vector3 x, y, z;
+                Vector3 x, y, z;
             };
         };
         
-        inline vector3& operator[](const size_t i) {
+        inline Vector3& operator[](const size_t i) {
             return data[i];
         }
 
-        inline const vector3& operator[](const size_t i) const {
+        inline const Vector3& operator[](const size_t i) const {
             return data[i];
         }
     };
 
-    struct matrix4x4 {
+    struct Matrix4x4 {
         union {
-            vector4 data[4];
+            Vector4 data[4];
             struct {
-                vector4 i, j, k, l;
+                Vector4 i, j, k, l;
             };
             struct {
-                vector4 x, y, z, w;
+                Vector4 x, y, z, w;
             };
         };
 
-        inline vector4& operator[](const size_t i) {
+        inline Vector4& operator[](const size_t i) {
             return data[i];
         }
 
-        inline const vector4& operator[](const size_t i) const {
+        inline const Vector4& operator[](const size_t i) const {
             return data[i];
         }
     };

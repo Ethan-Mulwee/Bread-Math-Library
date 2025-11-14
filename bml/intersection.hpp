@@ -8,16 +8,16 @@
 // TODO: contains complex ray primitive intersection functions see: https://www.realtimerendering.com/intersections.html
 namespace bml {
     // adapted from https://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-custom-ray-obb-function/
-    inline bool ray_intersection_obb(vector3 ray_origin, vector3 ray_direction, vector3 aabb_min, vector3 aabb_max, matrix4x4 transform, float& intersection_distance) {
+    inline bool ray_intersection_obb(Vector3 ray_origin, Vector3 ray_direction, Vector3 aabb_min, Vector3 aabb_max, Matrix4x4 transform, float& intersection_distance) {
         float t_min = 0.0f;
         float t_max = 100000.0f;
 
-        vector3 obb_position = transform.l.xyz;
+        Vector3 obb_position = transform.l.xyz;
 
-        vector3 delta = obb_position - ray_origin;
+        Vector3 delta = obb_position - ray_origin;
 
         {
-            vector3 x_axis = transform.i.xyz;
+            Vector3 x_axis = transform.i.xyz;
             float e = dot(x_axis, delta);
             float f = dot(ray_direction, x_axis);
 
@@ -43,7 +43,7 @@ namespace bml {
         }
 
         {
-            vector3 y_axis = transform.j.xyz;
+            Vector3 y_axis = transform.j.xyz;
             float e = dot(y_axis, delta);
             float f = dot(ray_direction, y_axis);
 
@@ -66,7 +66,7 @@ namespace bml {
         }
 
         {
-            vector3 z_axis = transform.k.xyz;
+            Vector3 z_axis = transform.k.xyz;
             float e = dot(z_axis, delta);
             float f = dot(ray_direction, z_axis);
 

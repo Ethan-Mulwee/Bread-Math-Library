@@ -8,8 +8,8 @@
 int main() {
     using namespace bml;
 
-    vector3 a = {1,2,3};
-    vector3 b = {4,5,6};
+    Vector3 a = {1,2,3};
+    Vector3 b = {4,5,6};
 
     int iterations = std::rand();
 

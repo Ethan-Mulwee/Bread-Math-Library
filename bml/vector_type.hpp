@@ -6,7 +6,7 @@
 
 namespace bml {
 
-    struct vector2 {
+    struct Vector2 {
         union {
             struct {
                 float x,y;            
@@ -36,7 +36,7 @@ namespace bml {
         }
     };
 
-    struct vector3 {
+    struct Vector3 {
         union {
             struct {
                 float x,y,z;
@@ -66,13 +66,13 @@ namespace bml {
         }
     };
 
-    struct vector4 {
+    struct Vector4 {
         union {
             struct {
                 float x, y, z, w;
             };
             float data[4];
-            vector3 xyz;
+            Vector3 xyz;
         };
 
         inline float length() const {

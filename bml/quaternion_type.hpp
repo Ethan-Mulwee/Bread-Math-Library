@@ -6,17 +6,17 @@
 #include "vector_type.hpp"
 
 namespace bml {
-    struct quaternion {
+    struct Quaternion {
         float x, y, z, w;
 
         float angle() const {
             return acos(w)*2.0f;
         }
 
-        vector3 axis() const {
+        Vector3 axis() const {
             float angle = (*this).angle();
             float s = sin(angle/2);
-            return vector3{x/s,y/s,z/s};
+            return Vector3{x/s,y/s,z/s};
         }
 
         float length() const {

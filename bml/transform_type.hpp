@@ -7,10 +7,10 @@
 
 namespace bml {
 
-    struct transform {
-        vector3 translation;
-        quaternion rotation;
-        vector3 scale;
+    struct Transform {
+        Vector3 translation;
+        Quaternion rotation;
+        Vector3 scale;
     };
 
 }

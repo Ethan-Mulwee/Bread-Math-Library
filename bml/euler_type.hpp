@@ -3,11 +3,11 @@
 
 namespace bml {
     // TODO: figure out what to do with this
-    enum euler_type{
+    enum EulerType{
         XYZ, XZY, YXZ, YZX, ZXY, ZYX
     };
 
-    struct euler_xyz {
+    struct EulerXYZ {
         float x, y, z;
     }; 
 }

@@ -19,8 +19,8 @@ namespace bml {
     //     return inverseTransform;
     // }
 
-    inline vector3 transform_inverse_transform_vector3(const transform &t, const vector3 &v) {
-        vector3 transformedVector = v;
+    inline Vector3 transform_inverse_transform_vector3(const Transform &t, const Vector3 &v) {
+        Vector3 transformedVector = v;
         transformedVector = transformedVector - t.translation;
         transformedVector = quaternion_transform_vector(inverse(t.rotation), transformedVector);
         transformedVector = transformedVector / t.scale;
@@ -28,8 +28,8 @@ namespace bml {
         return transformedVector;
     }
 
-    inline vector3 transform_transform_vector3(const transform &t, const vector3 &v) {
-        vector3 transformedVector = v;
+    inline Vector3 transform_transform_vector3(const Transform &t, const Vector3 &v) {
+        Vector3 transformedVector = v;
         transformedVector = transformedVector * t.scale;
         transformedVector = quaternion_transform_vector(t.rotation, transformedVector);
         transformedVector = transformedVector + t.translation;
@@ -37,15 +37,15 @@ namespace bml {
         return transformedVector;
     }
 
-    inline matrix4x4 matrix4x4_from_transform(const transform &t) {
-        matrix3x3 rotationMatrix = matrix3x3_from_quaternion(t.rotation);
-        matrix3x3 scaleMatrix = {
+    inline Matrix4x4 matrix4x4_from_transform(const Transform &t) {
+        Matrix3x3 rotationMatrix = matrix3x3_from_quaternion(t.rotation);
+        Matrix3x3 scaleMatrix = {
             t.scale.x, 0.0f, 0.0f,
             0.0f, t.scale.y, 0.0f,
             0.0f, 0.0f, t.scale.z
         };
 
-        matrix4x4 transformMatrix = matrix4x4_from_matrix3x3(rotationMatrix*scaleMatrix);
+        Matrix4x4 transformMatrix = matrix4x4_from_matrix3x3(rotationMatrix*scaleMatrix);
         transformMatrix[3][0] = t.translation.x;
         transformMatrix[3][1] = t.translation.y;
         transformMatrix[3][2] = t.translation.z;

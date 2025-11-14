@@ -6,7 +6,7 @@
 namespace bml {
     struct axis_angle {
         float angle;
-        vector3 axis;
+        Vector3 axis;
     };
 }
 
