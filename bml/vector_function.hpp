@@ -130,6 +130,10 @@ namespace bml {
         return Vector3{v.x/v.w, v.y/v.w, v.z/v.w};
     }
 
+    inline Vector3 lerp(const Vector3 &a, const Vector3 &b, const float t) {
+        return (1.0f-t) * a + t * b;
+    }
+
     /* -------------------------------------------------------------------------- */
     /*                                   vector4                                  */
     /* -------------------------------------------------------------------------- */
